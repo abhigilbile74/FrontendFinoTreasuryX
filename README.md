@@ -2,6 +2,8 @@
 
 A modern, full-featured personal finance tracking application built with React, Redux, and Axios.
 
+**🌐 Live Application:** https://finotreasuryx.onrender.com
+
 ## Features
 
 - **User Authentication**: Secure login and registration with JWT tokens
@@ -73,10 +75,10 @@ cd frontend
 npm install
 ```
 
-3. Configure API endpoint in `src/api/axiosInstance.js`:
-```javascript
-const API_BASE_URL = 'http://127.0.0.1:8000/api';
-```
+3. Set up environment variables:
+   - Copy `env.example` to `.env.local`
+   - Update `VITE_API_BASE_URL` if your backend runs on a different host
+   - See `RENDER_DEPLOYMENT.md` for Render-specific settings
 
 Tailwind CSS is already configured in `tailwind.config.js` and `postcss.config.js` with custom colors and responsive settings.
 

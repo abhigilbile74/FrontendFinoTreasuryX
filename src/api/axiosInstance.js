@@ -1,12 +1,5 @@
 import axios from 'axios';
-
-// Detect development mode
-const isDevelopment = import.meta.env.MODE === 'development';
-
-// Select correct API URL based on environment
-const API_BASE_URL = isDevelopment
-  ? import.meta.env.VITE_API_BASE_URL_LOCAL
-  : import.meta.env.VITE_API_BASE_URL_DEPLOY;
+import { API_BASE_URL, getApiUrl } from '../config/api';
 
 // Create axios instance
 export const axiosInstance = axios.create({
@@ -41,7 +34,7 @@ axiosInstance.interceptors.response.use(
         const refreshToken = localStorage.getItem('refreshToken');
 
         if (refreshToken) {
-          const response = await axios.post(`${API_BASE_URL}auth/refresh/`, {
+          const response = await axios.post(getApiUrl('auth/refresh/'), {
             refresh: refreshToken,
           });
 

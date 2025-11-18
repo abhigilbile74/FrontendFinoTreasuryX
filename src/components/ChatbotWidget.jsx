@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-// import { toggleChatbot, addMessage } from "../redux/slices/chatbotSlice";
 import { toggleChatbot, addMessage } from "../store/slices/chatbotSlice";
 import ChatMessage from "../chatbot/ChatMessage";
 import ChatInput from "../chatbot/ChatInput";

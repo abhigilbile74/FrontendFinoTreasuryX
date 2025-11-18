@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Navbar from '../components/Navbar';
 import RuPaySymbol from '../components/ui/RuPaySymbol';
+import { getApiUrl } from '../config/api';
 
 const Investment = () => {
   const { transactions } = useSelector((state) => state.transactions);
@@ -26,7 +27,7 @@ const Investment = () => {
         headers["Authorization"] = `Bearer ${token}`;
       }
 
-      const res = await fetch("http://localhost:8000/api/chatbot/ask/", {
+      const res = await fetch(getApiUrl('chatbot/ask/'), {
         method: "POST",
         headers: headers,
         body: JSON.stringify({ message: "Give me investment advice based on my financial situation" }),
