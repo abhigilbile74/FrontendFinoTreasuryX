@@ -1,5 +1,5 @@
 // Centralized API configuration for Vite + Render
-const rawBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000/api/';
+const rawBaseUrl = import.meta.env.VITE_API_BASE_URL || import.meta.env.VITE_API_BASE_URL_DEPLOY ||'https://finotreasuryx-1.onrender.com/api/';
 
 // Ensure the base URL always ends with a single slash
 export const API_BASE_URL = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
